@@ -13,10 +13,6 @@ app.use(express.json());
 
 app.use('/', router);
 
-app.get('/', (req, res) => {
-  res.send('hello world');
-});
-
 app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.json({ error: err.message });
